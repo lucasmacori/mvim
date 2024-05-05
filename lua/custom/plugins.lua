@@ -52,6 +52,39 @@ local plugins = {
   },
   {
     "tpope/vim-commentary"
-  }
+  },
+  {
+    "christoomey/vim-tmux-navigator",
+    cmd = {
+      "TmuxNavigateLeft",
+      "TmuxNavigateDown",
+      "TmuxNavigateUp",
+      "TmuxNavigateRight",
+      "TmuxNavigatePrevious",
+    },
+    keys = {
+      { "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
+      { "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
+      { "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
+      { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
+      { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+    },
+  },
+  {
+    "vim-test/vim-test",
+    cmd = {
+      "TestNearest",
+      "TestFile",
+      "TestSuite",
+      "TestLast",
+      "TestVisit"
+    },
+    keys = {
+      { "<leader>tt", "<cmd>TestNearest<cr>" },
+      { "<leader>tT", "<cmd>TestFile<cr>" },
+      { "<leader>ta", "<cmd>TestSuite<cr>" },
+      { "<leader>tl", "<cmd>TestLast<cr>" },
+    },
+  },
 }
 return plugins
