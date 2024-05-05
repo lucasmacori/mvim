@@ -45,6 +45,9 @@ opt.undofile = true
 -- interval for writing swap file to disk, also used by gitsigns
 opt.updatetime = 250
 
+-- scrolloff
+opt.scrolloff = 10
+
 -- go to previous/next line with h,l,left arrow and right arrow
 -- when cursor reaches end/beginning of line
 opt.whichwrap:append "<>[]hl"
