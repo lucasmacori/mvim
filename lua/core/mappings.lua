@@ -16,6 +16,12 @@ M.general = {
   },
 
   n = {
+
+    ["<C-u>"] = { "<C-u>zz", "Move up and center" },
+    ["<C-d>"] = { "<C-d>zz", "Move down and center" },
+    ["n"] = { "nzz", "Move to the next occurence and center" },
+    ["N"] = { "Nzz", "Move to the previous occurence and center" },
+
     ["<Esc>"] = { "<cmd> noh <CR>", "Clear highlights" },
     -- switch between windows
     -- Disabled these mappings so that I can use vim-tmux-navigator with them instead
@@ -23,6 +29,10 @@ M.general = {
     -- ["<C-l>"] = { "<C-w>l", "Window right" },
     -- ["<C-j>"] = { "<C-w>j", "Window down" },
     -- ["<C-k>"] = { "<C-w>k", "Window up" },
+
+    -- Harpoon
+    ["<leader>a"] = {":lua require('harpoon.ui').toggle_quick_menu()<CR>", "Toggle Harpoon quick menu"} ,
+    ["<leader>mh"] = {":lua require('harpoon.mark').add_file()<CR>", "Mark file in Harpoon"} ,
 
     -- save
     ["<C-s>"] = { "<cmd> w <CR>", "Save file" },

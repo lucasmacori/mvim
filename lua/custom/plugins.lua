@@ -20,6 +20,7 @@ local plugins = {
         "typescript-language-server",
         "eslint-lsp",
         "prettierd",
+        "gopls",
       }
     }
   },
@@ -72,6 +73,9 @@ local plugins = {
   },
   {
     "vim-test/vim-test",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
     cmd = {
       "TestNearest",
       "TestFile",
@@ -85,6 +89,32 @@ local plugins = {
       { "<leader>ta", "<cmd>TestSuite<cr>" },
       { "<leader>tl", "<cmd>TestLast<cr>" },
     },
+    config = function()
+      vim.g["test#strategy"] = "neovim_sticky"
+    end,
   },
+  {
+    "Exafunction/codeium.nvim",
+    dependencies = {
+        "nvim-lua/plenary.nvim",
+        "hrsh7th/nvim-cmp",
+    },
+    config = function()
+        require("codeium").setup({
+        })
+    end
+  },
+  {
+    "ThePrimeagen/harpoon",
+    config = function()
+      require("harpoon").setup({
+        menu = {
+          width = vim.api.nvim_win_get_width(0) - 20,
+          height = 10,
+        }
+      })
+      require("telescope").load_extension('harpoon')
+    end
+  }
 }
 return plugins
